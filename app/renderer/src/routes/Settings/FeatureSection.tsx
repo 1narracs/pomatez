@@ -127,7 +127,7 @@ const FeatureSection: React.FC = () => {
     },
     {
       id: "voice-assistance",
-      label: "Voice Assistance",
+      label: "SFX",
       checked: settings.enableVoiceAssistance,
       onChange: useCallback(() => {
         dispatch(

@@ -55,7 +55,7 @@ export const StyledStarButton = styled(StyledButtonSecondary)`
 
 export const StyledSectionSticky = styled.div`
   width: 100%;
-  height: 7.5rem;
+  height: 2rem;
 
   position: sticky;
   bottom: 0;
