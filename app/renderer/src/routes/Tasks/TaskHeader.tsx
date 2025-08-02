@@ -110,7 +110,7 @@ const TaskHeader: React.FC<Props> = ({
           ref={optionRef}
         >
           <StyledPopperHeader>
-            <h4>//</h4>
+            <h4>`//</h4>
             <button onClick={() => setShowOptions(false)}>
               <SVG name="close" />
             </button>

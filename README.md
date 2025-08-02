@@ -205,3 +205,15 @@ Please consider starring this project to show your :blue_heart: and support. Tha
 ## :newspaper: License
 
 MIT © [Roldan Montilla Jr](https://github.com/roldanjr)
+
+LOGO Directories
+
+@pomatez\app\electron\src\assets
+@pomatez\app\renderer\src\assets\logos
+@pomatez\app\tauri\icons
+{favicon}
+@pomatez\app\renderer\public
+
+ICON Directories
+
+@pomatez\app\renderer\src\assets\icons
