@@ -1,4 +1,52 @@
 @font-face {
+  font-family: Comico;
+  src: url(./assets/fonts/comico/Comico-Regular.woff2) format("woff2");
+  font-weight: regular;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: Archivo;
+  src: url(./assets/fonts/archivo/Archivo-Medium.woff2) format("woff2");
+  font-weight: medium;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: Archivo;
+  src: url(./assets/fonts/archivo/Archivo-Regular.woff2) format("woff2");
+  font-weight: regular;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: JetBrainsMono;
+  src: url(./assets/fonts/jetbrains-mono/JetBrainsMono-Regular.woff2) format("woff2");
+  font-weight: regular; 
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: JetBrainsMono;
+  src: url(./assets/fonts/jetbrains-mono/JetBrainsMono-Medium.woff2) format("woff2");
+  font-weight: medium; 
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: JetBrainsMono;
+  src: url(./assets/fonts/jetbrains-mono/JetBrainsMono-SemiBold.woff2) format("woff2");
+  font-weight: semi-bold; 
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
   font-family: Noto-Sans;
   src: url(./assets/fonts/noto-sans/NotoSans400.woff) format("woff");
   font-style: normal;
@@ -21,3 +69,6 @@
   font-style: normal;
   font-display: fallback;
 }
+
+
+
