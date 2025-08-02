@@ -286,13 +286,22 @@ if (!onlySingleInstance) {
   app.whenReady().then(async () => {
     if (isDev) {
       console.log("Installing devtools");
-      const extensions = ["REACT_DEVELOPER_TOOLS", "REDUX_DEVTOOLS"];
-      const installer = await import("electron-devtools-installer");
-      console.log(installer);
+      const {
+        default: installExtension,
+        REACT_DEVELOPER_TOOLS,
+        REDUX_DEVTOOLS,
+      } = await import("electron-devtools-installer");
+      console.log({
+        installExtension,
+        REACT_DEVELOPER_TOOLS,
+        REDUX_DEVTOOLS,
+      });
+
+      const extensions = [REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS];
 
       for (const tool of extensions) {
         try {
-          await installer.default(installer[tool], true);
+          await installExtension(tool, true);
         } catch (e) {
           console.log(e);
         }
