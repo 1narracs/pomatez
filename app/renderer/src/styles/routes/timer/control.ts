@@ -49,8 +49,8 @@ export const StyledControl = styled.div<ControlProps>`
 
   color: ${(p) =>
     (p.type === TimerStatus.SHORT_BREAK && "var(--color-green)") ||
-    (p.type === TimerStatus.LONG_BREAK && "var(--color-yellow)") ||
-    (p.type === TimerStatus.SPECIAL_BREAK && "var(--color-yellow)") ||
+    (p.type === TimerStatus.LONG_BREAK && "var(--color-purple)") ||
+    (p.type === TimerStatus.SPECIAL_BREAK && "var(--color-purple)") ||
     "var(--color-primary)"};
 
   .ripple-hook {
@@ -58,9 +58,9 @@ export const StyledControl = styled.div<ControlProps>`
       (p.type === TimerStatus.SHORT_BREAK &&
         "var(--color-bg-ripple-green)") ||
       (p.type === TimerStatus.LONG_BREAK &&
-        "var(--color-bg-ripple-yellow)") ||
+        "var(--color-bg-ripple-purple)") ||
       (p.type === TimerStatus.SPECIAL_BREAK &&
-        "var(--color-bg-ripple-yellow)") ||
+        "var(--color-bg-ripple-purple)") ||
       "var(--color-bg-ripple-primary)"};
   }
 
@@ -101,9 +101,9 @@ export const StyledSessionReset = styled.button<SessionProps>`
       (p.timerType === TimerStatus.SHORT_BREAK &&
         "var(--color-green)") ||
       (p.timerType === TimerStatus.LONG_BREAK &&
-        "var(--color-yellow)") ||
+        "var(--color-purple)") ||
       (p.timerType === TimerStatus.SPECIAL_BREAK &&
-        "var(--color-yellow)") ||
+        "var(--color-purple)") ||
       "var(--color-primary)"};
   }
 
@@ -189,7 +189,7 @@ export const StyledStrictIndicator = styled.div<{ warn?: boolean }>`
 
   border-radius: 50%;
   border: 1px solid var(--color-border-primary);
-  box-shadow: 0 0 0 0 rgba(var(--color-yellow-rgb), 0.16);
+  box-shadow: 0 0 0 0 rgba(var(--color-purple-rgb), 0.16);
 
   position: relative;
 
@@ -206,19 +206,19 @@ export const StyledStrictIndicator = styled.div<{ warn?: boolean }>`
 
   @keyframes warning {
     0% {
-      color: var(--color-yellow);
-      border-color: var(--color-yellow);
-      box-shadow: 0 0 0 0 rgba(var(--color-yellow-rgb), 0.24);
+      color: var(--color-purple);
+      border-color: var(--color-purple);
+      box-shadow: 0 0 0 0 rgba(var(--color-purple-rgb), 0.24);
     }
     50% {
-      color: var(--color-yellow);
-      border-color: var(--color-yellow);
-      box-shadow: 0 0 0 12px rgba(var(--color-yellow-rgb), 0);
+      color: var(--color-purple);
+      border-color: var(--color-purple);
+      box-shadow: 0 0 0 12px rgba(var(--color-purple-rgb), 0);
     }
     100% {
       color: var(--color-body-text);
       border-color: var(--color-border-primary);
-      box-shadow: 0 0 0 0 rgba(var(--color-yellow-rgb), 0);
+      box-shadow: 0 0 0 0 rgba(var(--color-purple-rgb), 0);
     }
   }
 `;
@@ -259,6 +259,6 @@ export const StyledStrictSnackbar = styled.div<{ warn?: boolean }>`
 
   & > span {
     font-weight: 500;
-    color: var(--color-yellow);
+    color: var(--color-purple);
   }
 `;

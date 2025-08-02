@@ -104,18 +104,18 @@ export const StyledButtonDanger = styled.button`
   color: var(--color-body-text);
   border-color: var(--color-border-primary);
   background-color: var(--color-bg-button-normal);
-  box-shadow: 0 0 0 0 rgba(var(--color-pink-rgb), 0.16);
+  box-shadow: 0 0 0 0 rgba(var(--color-orang-rgb), 0.16);
 
   &:hover,
   &:focus {
-    color: var(--color-pink);
-    border-color: var(--color-pink);
-    box-shadow: 0 0 0 0.2rem rgba(var(--color-pink-rgb), 0.16);
+    color: var(--color-orang);
+    border-color: var(--color-orang);
+    box-shadow: 0 0 0 0.2rem rgba(var(--color-orang-rgb), 0.16);
   }
 
   &:active {
-    color: var(--color-pink);
-    border-color: var(--color-pink);
-    box-shadow: 0 0 0 0.4rem rgba(var(--color-pink-rgb), 0.16);
+    color: var(--color-orang);
+    border-color: var(--color-orang);
+    box-shadow: 0 0 0 0.4rem rgba(var(--color-orang-rgb), 0.16);
   }
 `;

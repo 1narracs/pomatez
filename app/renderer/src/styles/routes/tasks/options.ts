@@ -55,7 +55,7 @@ export const StyledOptionList = styled.ul`
 
 export const StyledOptionPriority = styled.li`
   &:hover {
-    color: var(--color-yellow);
+    color: var(--color-purple);
   }
 `;
 

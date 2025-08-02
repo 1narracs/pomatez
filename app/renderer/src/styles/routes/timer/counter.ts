@@ -12,8 +12,8 @@ export const StyledCounterProgress = styled(ProgressSVG)<ProgressProps>`
   #progress {
     stroke: ${(p) =>
       (p.type === TimerStatus.SHORT_BREAK && "var(--color-green)") ||
-      (p.type === TimerStatus.LONG_BREAK && "var(--color-yellow)") ||
-      (p.type === TimerStatus.SPECIAL_BREAK && "var(--color-yellow)") ||
+      (p.type === TimerStatus.LONG_BREAK && "var(--color-purple)") ||
+      (p.type === TimerStatus.SPECIAL_BREAK && "var(--color-purple)") ||
       "var(--color-primary)"};
     stroke-width: 0.6rem;
     stroke-linecap: round;
@@ -125,8 +125,8 @@ export const StyledCounterTimer = styled.h3<TimerProps>`
   font-weight: 400;
   color: ${(p) =>
     (p.type === TimerStatus.SHORT_BREAK && "var(--color-green)") ||
-    (p.type === TimerStatus.LONG_BREAK && "var(--color-yellow)") ||
-    (p.type === TimerStatus.SPECIAL_BREAK && "var(--color-yellow)") ||
+    (p.type === TimerStatus.LONG_BREAK && "var(--color-purple)") ||
+    (p.type === TimerStatus.SPECIAL_BREAK && "var(--color-purple)") ||
     "var(--color-primary)"};
 
   line-height: 1.2;

@@ -53,12 +53,11 @@ export const StyledSpecialClearButton = styled.button<{
   align-items: center;
   justify-content: center;
 
-  color: var(--color-body-text);
+  color: var(--color-primary);
 
   border: none;
   border-radius: 50%;
   background-color: var(--color-bg-popper);
-  box-shadow: 0 2px 8px -1px var(--color-shadow-primary);
 
   opacity: 0;
   visibility: hidden;
@@ -66,12 +65,13 @@ export const StyledSpecialClearButton = styled.button<{
   transition: all 320ms ease;
 
   &:hover {
-    color: ${themes.color.close};
+    color: var(--color-bg-primary);
+    background-color: var(--color-primary);
   }
 
   & > svg {
-    width: 1rem;
-    height: 1rem;
+    width: 1.33rem;
+    height: 1.33rem;
 
     fill: currentColor;
   }

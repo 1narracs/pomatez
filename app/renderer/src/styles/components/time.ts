@@ -27,7 +27,7 @@ export const StyledTimeInput = styled.input<{ error?: boolean }>`
   box-shadow: 0 0 0 0 rgba(var(--color-primary-rgb), 0.16);
 
   &::-webkit-datetime-edit-fields-wrapper {
-    color: ${(p) => p.error && "var(--color-pink)"};
+    color: ${(p) => p.error && "var(--color-orang)"};
   }
 
   &::-webkit-datetime-edit-text {
@@ -50,11 +50,11 @@ export const StyledTimeInput = styled.input<{ error?: boolean }>`
   ${(p) =>
     p.error &&
     css`
-      border-color: var(--color-pink) !important;
-      box-shadow: 0 0 0 2px rgba(var(--color-pink-rgb), 0.16) !important;
+      border-color: var(--color-orang) !important;
+      box-shadow: 0 0 0 2px rgba(var(--color-orang-rgb), 0.16) !important;
 
       & ~ label {
-        color: var(--color-pink) !important;
+        color: var(--color-orang) !important;
       }
     `}
 `;

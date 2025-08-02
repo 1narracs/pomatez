@@ -12,26 +12,46 @@ function mergeSettings(
   const merged: any = { ...base };
 
   for (const key in base) {
+    const typedKey = key as keyof SettingTypes;
+    const baseValue = base[typedKey];
+    const overrideValue = override?.[typedKey];
+
     if (
-      typeof base[key] === "object" &&
-      base[key] !== null &&
-      !Array.isArray(base[key])
+      typeof baseValue === "object" &&
+      baseValue !== null &&
+      !Array.isArray(baseValue) &&
+      typeof overrideValue === "object" &&
+      overrideValue !== null &&
+      !Array.isArray(overrideValue)
     ) {
-      merged[key] = mergeSettings(
-        base[key],
-        (override?.[key] as any) || {}
+      merged[typedKey] = mergeSettings(
+        baseValue as SettingTypes,
+        overrideValue as Partial<SettingTypes>
       );
     } else {
-      merged[key] = override?.[key] ?? base[key];
+      merged[typedKey] = overrideValue ?? baseValue;
     }
   }
   return merged as SettingTypes;
 }
 
-const settings = mergeSettings(
-  defaultSettings,
-  getFromStorage("state") && getFromStorage("state").settings
-);
+const storedStateRaw = getFromStorage("state");
+let storedSettings: Partial<SettingTypes> = {};
+
+// Ensure storedStateRaw is a plain object (not null, not array, not primitive)
+if (
+  storedStateRaw &&
+  typeof storedStateRaw === "object" &&
+  !Array.isArray(storedStateRaw) &&
+  "settings" in storedStateRaw &&
+  typeof (storedStateRaw as any).settings === "object" &&
+  !Array.isArray((storedStateRaw as any).settings)
+) {
+  storedSettings = (storedStateRaw as any)
+    .settings as Partial<SettingTypes>;
+}
+
+const settings = mergeSettings(defaultSettings, storedSettings);
 
 console.log("settings", settings);
 
