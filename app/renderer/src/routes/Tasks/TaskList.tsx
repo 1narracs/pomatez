@@ -78,6 +78,7 @@ const TaskList: React.FC<Props> = ({
                     onEditTitle={onEditListTitle}
                     onRemoveList={onRemoveListAction}
                     onMakeListPriority={onSetListPriorityAction}
+                    priority={priority}
                   />
 
                   <StyledCardWrapper>

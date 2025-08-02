@@ -8,9 +8,13 @@ type Props = {
 };
 
 const TaskInnerList: React.FC<Props> = ({ tasks }) => {
+  const sortedTasks = [...tasks].sort(
+    (a, b) => Number(b.priority) - Number(a.priority)
+  );
+
   return (
     <StyledTaskSection>
-      {tasks.map(({ _id, title, cards, priority }, index) => (
+      {sortedTasks.map(({ _id, title, cards, priority }, index) => (
         <TaskList
           listId={_id}
           title={title}

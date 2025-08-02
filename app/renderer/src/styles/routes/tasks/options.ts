@@ -55,7 +55,7 @@ export const StyledOptionList = styled.ul`
 
 export const StyledOptionPriority = styled.li`
   &:hover {
-    color: var(--color-purple);
+    color: var(--color-green);
   }
 `;
 
@@ -67,6 +67,6 @@ export const StyledOptionDone = styled.li`
 
 export const StyledOptionDelete = styled.li`
   &:hover {
-    color: var(--color-pink);
+    color: var(--color-orang);
   }
 `;

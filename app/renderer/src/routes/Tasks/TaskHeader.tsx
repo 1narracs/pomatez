@@ -3,7 +3,7 @@ import {
   StyledTaskHeader,
   StyledTaskHeaderOption,
   StyledTaskHeading,
-  StyledTaskHeadeInput,
+  StyledTaskHeaderInput,
   StyledOptionList,
   StyledPopperContent,
   StyledPopperHeader,
@@ -15,6 +15,7 @@ import { useTargetOutside } from "hooks";
 
 type Props = {
   title: string;
+  priority: boolean;
 
   onEditTitle?: (title: string) => void;
   onRemoveList?: () => void;
@@ -23,6 +24,7 @@ type Props = {
 
 const TaskHeader: React.FC<Props> = ({
   title,
+  priority,
   onEditTitle,
   onRemoveList,
   onMakeListPriority,
@@ -32,9 +34,25 @@ const TaskHeader: React.FC<Props> = ({
 
   const [editing, setEditing] = useTargetOutside({ ref: inputRef });
 
-  const [showOptions, setShowOptions] = useTargetOutside({
-    ref: optionRef,
-  });
+  const [showOptions, setShowOptions] = React.useState(false);
+
+  useEffect(() => {
+    if (!showOptions) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        optionRef.current &&
+        !optionRef.current.contains(event.target as Node)
+      ) {
+        setShowOptions(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showOptions]);
 
   useEffect(() => {
     if (editing) {
@@ -69,7 +87,7 @@ const TaskHeader: React.FC<Props> = ({
 
   const renderListTitle = () =>
     editing ? (
-      <StyledTaskHeadeInput ref={inputRef} />
+      <StyledTaskHeaderInput ref={inputRef} />
     ) : (
       <StyledTaskHeading onClick={onEditTitleAction}>
         {title}
@@ -92,7 +110,7 @@ const TaskHeader: React.FC<Props> = ({
           ref={optionRef}
         >
           <StyledPopperHeader>
-            <h4>Actions</h4>
+            <h4>//</h4>
             <button onClick={() => setShowOptions(false)}>
               <SVG name="close" />
             </button>

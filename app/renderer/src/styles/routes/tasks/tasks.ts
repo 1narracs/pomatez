@@ -57,10 +57,14 @@ export const StyledTaskSectionItem = styled.div<SectionTypes>`
 
   padding: 1rem;
 
-  border-radius: 1px;
+  border-radius: 2px;
   border-bottom: 2px solid
     ${(p) =>
-      (p.priority && "var(--color-purple)") || "var(--color-primary)"};
+      (p.priority && "var(--color-green)") || "var(--color-primary)"};
+
+  border-left: 2px solid
+    ${(p) =>
+      (p.priority && "var(--color-green)") || "var(--color-primary)"};
 
   background-color: var(--color-bg-task-list);
   box-shadow: 0 0px 0px var(--color-shadow-primary);
@@ -104,7 +108,7 @@ export const StyledTaskHeading = styled.h3`
   overflow-wrap: break-word;
 `;
 
-export const StyledTaskHeadeInput = styled(StyledInput)`
+export const StyledTaskHeaderInput = styled(StyledInput)`
   padding: 0.5rem;
 
   height: max-content;
